@@ -2,6 +2,7 @@ package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -19,6 +20,7 @@ public class Database {
 	
 	private Connection con;
 	private Statement st;
+	private PreparedStatement ps;
 	
 	public ResultSet rs;
 	private ResultSetMetaData rsm;
@@ -57,6 +59,15 @@ public class Database {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public PreparedStatement preparedStatment(String query){
+		try {
+			ps = con.prepareStatement(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ps;
 	}
 	
 	

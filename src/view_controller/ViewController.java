@@ -2,6 +2,7 @@ package view_controller;
 
 import javafx.stage.Stage;
 import view.AppView;
+import view.HomeView;
 import view.LoginView;
 
 public class ViewController {
@@ -29,6 +30,13 @@ public class ViewController {
 		LoginView lv= new LoginView();
 		this.appView.setContent(lv);
 		this.stage.setTitle("Login Page");
+		this.stage.show();
+	}
+	
+	public void navigateToHome() {
+		HomeView hv= new HomeView();
+		this.appView.setContent(hv);
+		this.stage.setTitle("Home Page");
 		this.stage.show();
 	}
 }

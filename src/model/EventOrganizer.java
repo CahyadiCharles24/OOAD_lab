@@ -2,7 +2,7 @@ package model;
 
 public class EventOrganizer extends User{
 
-	public EventOrganizer(String id, String username, String email, String password, String role) {
+	public EventOrganizer(int id, String username, String email, String password, int role) {
 		super(id, username, email, password, role);
 	}
 
